@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { imageTransformPlugin as eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import htmlmin from "html-minifier-terser";
-import postcss from "postcss";
+import CleanCSS from "clean-css";
 import cssnano from "cssnano";
 import { minify as jsmin } from "terser";
 // 1. NEU: Eleventy Base Plugin importieren
@@ -148,13 +148,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addTemplateFormats("css");
   eleventyConfig.addExtension("css", {
     outputFileExtension: "css",
-    compile: async function (inputContent, inputPath) {
+    compile: async function (inputContent) {
       if (isProduction) {
-        const result = await postcss([cssnano({ preset: "default" })]).process(
-          inputContent,
-          { from: inputPath },
-        );
-        return async () => result.css;
+        const minified = new CleanCSS({}).minify(inputContent);
+        return async () => minified.styles;
       }
       return async () => inputContent;
     },
