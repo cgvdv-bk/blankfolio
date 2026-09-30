@@ -11,18 +11,18 @@ npm wird zusammen mit Node.js installiert.
 
 ## Schritt 1: Eigenes Repository erstellen
 
-Erstelle auf GitHub aus dieser Vorlage ein eigenes Repository. Klicke dazu auf **Use this template** und dann auf **Create a new repository**. Klone anschließend dein neues Repository auf deinen Computer:
+Erstelle auf GitHub aus dieser Vorlage ein eigenes Repository. Klicke dazu auf **Use this template** und dann auf **Create a new repository**. Klone anschließend dein neues Repository auf deinen Computer. Nutze dazu das Terminal in VS Code, das du über **Terminal > Neues Terminal** öffnest, und führe dort folgenden Befehl aus:
 
 ```sh
 git clone https://github.com/DEIN-NAME/DEIN-REPOSITORY.git
 cd DEIN-REPOSITORY
 ```
 
-Ersetze `DEIN-NAME` und `DEIN-REPOSITORY` durch deinen GitHub-Benutzernamen und den Namen deines Repositorys. Wenn du das Projekt bereits geklont hast, öffne stattdessen dessen Ordner im Terminal oder in VS Code.
+Ersetze `DEIN-NAME` und `DEIN-REPOSITORY` durch deinen GitHub-Benutzernamen und den Namen deines Repositorys.
 
 ## Schritt 2: Website lokal starten
 
-Installiere im Projektordner die benötigten Pakete und starte anschließend den Entwicklungsserver:
+Führe im Terminal nacheinander die folgenden Befehle aus, um die benötigten Pakete zu installieren und die Website zu starten:
 
 ```sh
 npm install
@@ -87,7 +87,7 @@ Die Dateien werden im Ordner `dist/` erzeugt. Ändere diesen Ordner nicht von Ha
 
 1. Öffne auf GitHub die Einstellungen deines Repositorys unter **Settings → Pages**.
 2. Wähle bei **Build and deployment** als Quelle **GitHub Actions**.
-3. Übernimm deine Änderungen in den Branch `main`:
+3. Führe im geöffneten Terminal nacheinander diese Befehle aus, um deine Änderungen in den Branch `main` zu übernehmen und zu GitHub hochzuladen:
 
    ```sh
    git add .
