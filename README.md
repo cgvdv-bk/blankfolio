@@ -11,7 +11,7 @@ npm wird zusammen mit Node.js installiert.
 
 ## Schritt 1: Eigenes Repository erstellen
 
-Erstelle auf GitHub aus dieser Vorlage ein eigenes Repository. Klicke dazu auf **Use this template** und dann auf **Create a new repository**. Klone anschließend dein neues Repository auf deinen Computer. Nutze dazu das Terminal in VS Code, das du über **Terminal > Neues Terminal** öffnest, und führe dort folgenden Befehl aus:
+Erstelle auf GitHub aus dieser Vorlage ein eigenes Repository. Klicke dazu oben rechts auf **Use this template** und dann auf **Create a new repository**. Klone anschließend dein neues Repository auf deinen Computer. Nutze dazu das Terminal in VS Code, das du über **Terminal > Neues Terminal** öffnest, und führe dort folgenden Befehl aus:
 
 ```sh
 git clone https://github.com/DEIN-NAME/DEIN-REPOSITORY.git
@@ -54,25 +54,6 @@ Schreibe die Projektbeschreibung unterhalb der drei Bindestriche. Lege die Bilde
 
 Für ein neues Projekt kopiere einen vorhandenen Projektordner, gib dem neuen Ordner die nächste Nummer, zum Beispiel `004_mein-projekt`, und ersetze Text und Bilder. Die Nummern sorgen für eine übersichtliche Ordnerliste. Die Projektseiten werden automatisch erstellt.
 
-### Wichtige Ordner
-
-```text
-src/
-├── index.html       Startseite
-├── info/            Info- und Kontakttexte
-├── layouts/         Vorlagen für die Seiten
-├── projects/        Projekte, Texte und Bilder
-├── public/          Schriftarten und statische Dateien
-├── scripts/         Globale und seitenspezifische JavaScript-Dateien:
-│   ├── global.js       Skripte für alle Seiten
-│   └── layouts/        Skripte für einzelne Seitentypen
-├── settings/        Seitentitel und Name
-└── styles/          CSS-Dateien für die Gestaltung:
-   ├── global.css       CSS-Regeln für alle Seiten
-   ├── reset.css        Grundlegende CSS-Regeln
-   └── layouts/         CSS-Dateien für einzelne Seitentypen
-```
-
 ## Schritt 5: Website bauen
 
 Mit diesem Befehl erstellst du eine fertige Version der Website:
@@ -102,3 +83,22 @@ GitHub Pages eignet sich für kleinere Websites: Die veröffentlichte Website da
 ### Bei einem anderen Anbieter veröffentlichen
 
 Wenn dein Webhosting-Anbieter FTP-Zugriff ermöglicht, kannst du die Website auch dort veröffentlichen. Führe zuerst `npm run build` aus und übertrage anschließend den Inhalt des Ordners `dist/` mit einem FTP-Programm in das Webverzeichnis deines Servers.
+
+### Wichtige Ordner
+
+```text
+src/
+├── index.html       Startseite
+├── info/            Info- und Kontakttexte
+├── layouts/         Vorlagen für die Seiten
+├── projects/        Projekte, Texte und Bilder
+├── public/          Schriftarten und statische Dateien
+├── scripts/         Globale und seitenspezifische JavaScript-Dateien:
+│   ├── global.js       Skripte für alle Seiten
+│   └── layouts/        Skripte für einzelne Seitentypen
+├── settings/        Seitentitel und Name
+└── styles/          CSS-Dateien für die Gestaltung:
+   ├── global.css       CSS-Regeln für alle Seiten
+   ├── reset.css        Grundlegende CSS-Regeln
+   └── layouts/         CSS-Dateien für einzelne Seitentypen
+```
