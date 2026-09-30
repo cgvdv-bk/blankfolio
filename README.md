@@ -1,6 +1,6 @@
 # Blankfolio
 
-Blankfolio ist eine Portfolio-Vorlage für den Coding-Grundlagenkurs. Du kannst Texte, Projekte und Bilder anpassen, die Website lokal ansehen und sie anschließend über GitHub Pages veröffentlichen.
+Blankfolio ist eine speziell für den Coding-Grundlagenkurs entwickelte Portfolio-Vorlage. Sie basiert auf dem Prinzip eines Static Site Generators und ermöglicht es dir, bereits mit einfachen Grundkenntnissen in HTML und CSS eine eigene Website zu bauen. Blankfolio nimmt dir dabei die Strukturierung ab: Es generiert automatisch eine Projektübersicht und die passenden Unterseiten für deine Arbeiten. Bei der Veröffentlichung sorgt das Tool zudem für Optimierungen, wie etwa die automatische Ausgabe moderner und web-optimierter Bildformate.
 
 ## Voraussetzungen
 
