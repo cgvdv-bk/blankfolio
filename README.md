@@ -64,24 +64,6 @@ npm run build
 
 Die Dateien werden im Ordner `dist/` erzeugt. Ändere diesen Ordner nicht von Hand; er wird bei jedem Build neu erstellt.
 
-## Auf GitHub Pages veröffentlichen
-
-1. Öffne auf GitHub die Einstellungen deines Repositorys unter **Settings → Pages**.
-2. Wähle bei **Build and deployment** als Quelle **GitHub Actions**.
-3. Übernimm deine Änderungen in den Branch `main`:
-
-   ```sh
-   git add .
-   git commit -m "Portfolio anpassen"
-   git push
-   ```
-
-Nach dem Push baut GitHub Actions die Website und veröffentlicht sie. Den Status findest du im Reiter **Actions**; nach erfolgreicher Veröffentlichung erscheint die Website-Adresse in den Pages-Einstellungen. Der Workflow passt die Pfade automatisch an den Namen deines Repositorys an.
-
-### Bei einem anderen Anbieter veröffentlichen
-
-Wenn dein Webhosting-Anbieter FTP-Zugriff ermöglicht, kannst du die Website auch dort veröffentlichen. Führe zuerst `npm run build` aus und übertrage anschließend den Inhalt des Ordners `dist/` mit einem FTP-Programm in das Webverzeichnis deines Servers.
-
 ## Wichtige Ordner
 
 ```text
@@ -100,3 +82,23 @@ src/
    ├── reset.css        Grundlegende CSS-Regeln
    └── layouts/         CSS-Dateien für einzelne Seitentypen
 ```
+
+## Auf GitHub Pages veröffentlichen
+
+1. Öffne auf GitHub die Einstellungen deines Repositorys unter **Settings → Pages**.
+2. Wähle bei **Build and deployment** als Quelle **GitHub Actions**.
+3. Übernimm deine Änderungen in den Branch `main`:
+
+   ```sh
+   git add .
+   git commit -m "Portfolio anpassen"
+   git push
+   ```
+
+Nach dem Push baut GitHub Actions die Website und veröffentlicht sie. Den Status findest du im Reiter **Actions**; nach erfolgreicher Veröffentlichung erscheint die Website-Adresse in den Pages-Einstellungen. Der Workflow passt die Pfade automatisch an den Namen deines Repositorys an.
+
+GitHub Pages eignet sich für kleinere Websites: Die veröffentlichte Website darf höchstens 1 GB groß sein. Außerdem gilt eine weiche Bandbreitengrenze von 100 GB pro Monat; ein Deployment darf höchstens 10 Minuten dauern. Weitere Informationen findest du in der [Dokumentation zu den GitHub-Pages-Limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
+
+### Bei einem anderen Anbieter veröffentlichen
+
+Wenn dein Webhosting-Anbieter FTP-Zugriff ermöglicht, kannst du die Website auch dort veröffentlichen. Führe zuerst `npm run build` aus und übertrage anschließend den Inhalt des Ordners `dist/` mit einem FTP-Programm in das Webverzeichnis deines Servers.
