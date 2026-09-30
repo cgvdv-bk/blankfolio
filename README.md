@@ -54,16 +54,6 @@ Schreibe die Projektbeschreibung unterhalb der drei Bindestriche. Lege die Bilde
 
 Für ein neues Projekt kopiere einen vorhandenen Projektordner, gib dem neuen Ordner die nächste Nummer, zum Beispiel `004_mein-projekt`, und ersetze Text und Bilder. Die Nummern sorgen für eine übersichtliche Ordnerliste. Die Projektseiten werden automatisch erstellt.
 
-## Website bauen
-
-Mit diesem Befehl erstellst du eine fertige Version der Website:
-
-```sh
-npm run build
-```
-
-Die Dateien werden im Ordner `dist/` erzeugt. Ändere diesen Ordner nicht von Hand; er wird bei jedem Build neu erstellt.
-
 ## Wichtige Ordner
 
 ```text
@@ -82,6 +72,16 @@ src/
    ├── reset.css        Grundlegende CSS-Regeln
    └── layouts/         CSS-Dateien für einzelne Seitentypen
 ```
+
+## Website bauen
+
+Mit diesem Befehl erstellst du eine fertige Version der Website:
+
+```sh
+npm run build
+```
+
+Die Dateien werden im Ordner `dist/` erzeugt. Ändere diesen Ordner nicht von Hand; er wird bei jedem Build neu erstellt.
 
 ## Auf GitHub Pages veröffentlichen
 
