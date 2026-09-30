@@ -5,7 +5,7 @@
   {% if prev %}
   <a href="{{ prev.url }}" class="btn btn-left">← {{ prev.data.title }}</a>
   {% endif %}
-  <!-- Zeigt die Information Projekt XXX von XXX -->
+  <!-- Zeigt die Position des Projekts in der Übersicht. -->
   <div class="project-counter">{{ projectIndex }} / {{ projectTotal }}</div>
   <!-- Button zum nächsten Projekt: -->
   {% set next = collections.projects | getNextCollectionItem(page) %}

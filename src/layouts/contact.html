@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="/styles/layouts/contact.css" />
   </head>
   <body>
-    <!-- Importiert die Kopfzeile aus der Datei '/layouts/header.html': -->
+    <!-- Bindet die Kopfzeile ein. -->
     {% include "components/header.html" %}
 
-    <!-- Inhalte der Kontakt Seite: -->
+    <!-- Inhalt der Kontaktseite: -->
     <main>
       <div class="info-contact">
-        <!-- Inhalt aus der Datei "src/info/contact.md": -->
+        <!-- Zeigt den Inhalt aus der Markdown-Datei. -->
         {{ content | safe }}
       </div>
     </main>
 
-    <!-- Importiert die Fußzeile aus der Datei '/layouts/footer.html': -->
+    <!-- Bindet die Fußzeile ein. -->
     {% include "components/footer.html" %}
   </body>
 </html>

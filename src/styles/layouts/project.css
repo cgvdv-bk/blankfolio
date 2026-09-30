@@ -8,7 +8,7 @@
   gap: 0.25rem;
 }
 
-/* Vor-und-Zurück-Buttons + Counter */
+/* Projektnavigation und Zähler */
 .pagination {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

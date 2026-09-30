@@ -1,4 +1,4 @@
-name: Deploy 11ty Site to GitHub Pages
+name: 11ty-Website auf GitHub Pages veröffentlichen
 
 on:
   push:

@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="/styles/layouts/info.css" />
   </head>
   <body>
-    <!-- Importiert die Kopfzeile aus der Datei '/layouts/header.html': -->
+    <!-- Bindet die Kopfzeile ein. -->
     {% include "components/header.html" %}
 
-    <!-- Inhalte der Info Seite: -->
+    <!-- Inhalt der Info-Seite: -->
     <main>
       <div class="info-text">
-        <!-- Inhalt aus der Datei "src/info/info.md": -->
+        <!-- Zeigt den Inhalt aus der Markdown-Datei. -->
         {{ content | safe }}
       </div>
     </main>
 
-    <!-- Importiert die Fußzeile aus der Datei '/layouts/footer.html': -->
+    <!-- Bindet die Fußzeile ein. -->
     {% include "components/footer.html" %}
   </body>
 </html>

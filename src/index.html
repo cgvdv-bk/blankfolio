@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="/styles/layouts/start.css" />
   </head>
   <body>
-    <!-- Importiert die Kopfzeile aus der Datei '/layouts/header.html': -->
+    <!-- Bindet die Kopfzeile ein. -->
     {% include "components/header.html" %}
 
-    <!-- Inhalte der Startseite: -->
+    <!-- Zeigt alle Projekte mit Vorschaubild und Informationen. -->
     <main>
       <div class="project-grid">
-        <!-- Die For-Schleife erstellt für jedes Projekt: -->
+        <!-- Erstellt für jedes Projekt einen Eintrag. -->
         {%- for project in collections.projects -%}
         <a class="project" href="{{ project.url }}">
           <img src="{{ project.data.images | first }}" alt="" />
@@ -30,7 +30,7 @@
       </div>
     </main>
 
-    <!-- Importiert sie Fußzeile aus der Datei '/layouts/footer.html': -->
+    <!-- Bindet die Fußzeile ein. -->
     {% include "components/footer.html" %}
   </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/styles/layouts/project.css" />
   </head>
   <body>
-    <!-- Importiert die Kopfzeile aus der Datei '/layouts/header.html': -->
+    <!-- Bindet die Kopfzeile ein. -->
     {% include "components/header.html" %}
 
     <!-- Inhalt der Projektseiten: -->
@@ -23,7 +23,7 @@
         {%- endfor -%}
       </div>
 
-      <!-- Inhalte aus der zugehörigen Datei "src/projects/000_example-project/info.md": -->
+      <!-- Zeigt die Beschreibung des Projekts. -->
       <div class="project-info">
         <h2>{{ title }}</h2>
         <div>{{ category }}</div>
@@ -31,11 +31,11 @@
         <div class="project-description">{{ content | safe }}</div>
       </div>
 
-      <!-- Importiert die Vor- und Zurückpfeile aus der Datei '/layouts/pagination.html': -->
+      <!-- Bindet die Projektnavigation ein. -->
       {% include "components/pagination.html" %}
     </main>
 
-    <!-- Importiert die Fußzeile aus der Datei '/layouts/footer.html': -->
+    <!-- Bindet die Fußzeile ein. -->
     {% include "components/footer.html" %}
   </body>
 </html>
