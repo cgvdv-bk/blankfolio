@@ -20,7 +20,6 @@ export default function (eleventyConfig) {
   const isProduction = process.env.ELEVENTY_RUN_MODE === "build";
 
   // Passthroughs für Styles, Schriften & Bilder
-  eleventyConfig.addPassthroughCopy("src/styles");
   eleventyConfig.addPassthroughCopy("src/public");
 
   // Bilder-Passthrough: NUR im lokalen Entwicklungsmodus aktiv!
