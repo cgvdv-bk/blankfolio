@@ -94,11 +94,11 @@ src/
 ├── projects/        Projekte, Texte und Bilder
 ├── public/          Schriftarten und statische Dateien
 ├── scripts/         Globale und seitenspezifische JavaScript-Dateien:
-│   ├── global.js       Skripte für alle Seiten
+│   ├── global.js       Skript für alle Seiten
 │   └── layouts/        Skripte für einzelne Seitentypen
 ├── settings/        Seitentitel und Name
 └── styles/          CSS-Dateien für die Gestaltung:
    ├── global.css       CSS-Regeln für alle Seiten
-   ├── reset.css        Grundlegende CSS-Regeln
+   ├── reset.css        Grundlegender CSS-Reset
    └── layouts/         CSS-Dateien für einzelne Seitentypen
 ```
