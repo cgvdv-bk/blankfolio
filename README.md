@@ -4,10 +4,8 @@ Blankfolio ist eine speziell für den Coding-Grundlagenkurs entwickelte Portfoli
 
 ## Voraussetzungen
 
-- [Node.js 22](https://nodejs.org/) und npm
-- Ein GitHub-Konto
-
-npm wird zusammen mit Node.js installiert.
+- Installiere [Node.js 22](https://nodejs.org/) auf deinem Computer.
+- Erstelle einen GitHub Account und melde dich damit in [VS Code](https://code.visualstudio.com/docs/sourcecontrol/github#_sign-in-to-github-for-git-operations) und auf der [GitHub-Website](https://github.com) an.
 
 ## Schritt 1: Eigenes Repository erstellen
 
