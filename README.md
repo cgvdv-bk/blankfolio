@@ -9,7 +9,7 @@ Blankfolio ist eine speziell für den Coding-Grundlagenkurs entwickelte Portfoli
 
 ## Schritt 1: Eigenes Repository erstellen
 
-Erstelle auf GitHub aus dieser Vorlage ein eigenes Repository. Klicke dazu oben rechts auf **Use this template** und dann auf **Create a new repository**. Klone anschließend dein neues Repository auf deinen Computer. Nutze dazu das Terminal in VS Code, das du über **Terminal > Neues Terminal** öffnest, und führe dort folgenden Befehl aus:
+Erstelle auf GitHub aus dieser Vorlage ein eigenes Repository. Klicke dazu oben rechts auf **Use this template** und dann auf **Create a new repository**. Klone das neue Repository danach auf deinen Computer. Öffne dazu das Terminal in VS Code über **Terminal > Neues Terminal** und führe folgenden Befehl aus:
 
 ```sh
 git clone https://github.com/DEIN-NAME/DEIN-REPOSITORY.git
