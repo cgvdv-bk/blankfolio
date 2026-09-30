@@ -7,7 +7,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
     "@awesome.me/buildawesome": "^0.0.1",
-    "cssnano": "^8.0.10",
+    "cssnano": "^9.1.2",
     "html-minifier-terser": "^7.2.0",
     "postcss": "^8.5.28",
     "rimraf": "^6.1.3",
