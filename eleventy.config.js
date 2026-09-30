@@ -1,33 +1,31 @@
-import markdownIt from "markdown-it";
-import matter from "gray-matter";
 import fs from "node:fs";
 import path from "node:path";
-import { imageTransformPlugin as eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-import htmlmin from "html-minifier-terser";
-import CleanCSS from "clean-css";
-import cssnano from "cssnano";
-import { minify as jsmin } from "terser";
-// 1. NEU: Eleventy Base Plugin importieren
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { imageTransformPlugin as eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import CleanCSS from "clean-css";
+import htmlmin from "html-minifier-terser";
+import matter from "gray-matter";
+import markdownIt from "markdown-it";
+import { minify as jsmin } from "terser";
 
 export default function (eleventyConfig) {
-  // 2. NEU: HTML Base Plugin aktivieren (wandelt z. B. href="/projects/..." passend um)
+  // Passt absolute Pfade an den eingestellten pathPrefix an.
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
   const md = markdownIt();
 
-  // Umgebung prüfen: Ist es der finale Produktions-Build?
+  // Erkennt den Produktions-Build.
   const isProduction = process.env.ELEVENTY_RUN_MODE === "build";
 
-  // Passthroughs für Styles, Schriften & Bilder
+  // Kopiert statische Dateien unverändert in den Ausgabeordner.
   eleventyConfig.addPassthroughCopy("src/public");
 
-  // Bilder-Passthrough: NUR im lokalen Entwicklungsmodus aktiv!
+  // Kopiert Bilder im Entwicklungsmodus unverändert.
   if (!isProduction) {
     eleventyConfig.addPassthroughCopy("src/**/*.{jpg,jpeg,png,webp,gif,svg}");
   }
 
-  // Bilder aus den Projektordnern auslesen
+  // Ergänzt Markdown-Daten um HTML und Bilder aus dem jeweiligen Ordner.
   eleventyConfig.addDataExtension("md", {
     parser: (fileContent, filePath) => {
       const { data, content } = matter(fileContent);
@@ -55,7 +53,7 @@ export default function (eleventyConfig) {
             .map((file) => `${webFolderPath}/${file}`);
         }
       } catch (err) {
-        console.error("Error reading images in::", filePath, err);
+        console.error("Fehler beim Lesen der Bilder in:", filePath, err);
       }
 
       return {
@@ -67,7 +65,7 @@ export default function (eleventyConfig) {
     },
   });
 
-  // Zentrales URL-Rewriting basierend auf dem Frontmatter-Titel
+  // Berechnet Projektpfade und fortlaufende Projektnummern.
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: (data) => {
       if (data.page.filePathStem.startsWith("/projects/")) {
@@ -109,10 +107,10 @@ export default function (eleventyConfig) {
     },
   });
 
-  // Globale Funktionen
+  // Stellt das aktuelle Jahr als Shortcode bereit.
   eleventyConfig.addShortcode("year", () => new Date().getFullYear());
 
-  // Eleventy Image Plugin Konfiguration
+  // Optimiert Bilder im Produktions-Build.
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     formats: isProduction ? ["avif", "webp", "jpeg"] : ["auto"],
     widths: isProduction ? [800, 1200, 1600, "auto"] : ["auto"],
@@ -126,7 +124,7 @@ export default function (eleventyConfig) {
     },
   });
 
-  // Minifier für HTML
+  // Minifiziert HTML im Produktions-Build.
   eleventyConfig.addTransform("htmlmin", async function (content) {
     const isHtml =
       this.page.outputPath && this.page.outputPath.endsWith(".html");
@@ -143,7 +141,7 @@ export default function (eleventyConfig) {
     return content;
   });
 
-  // CSS Verarbeitung (Minifizierung nur in Production)
+  // Verarbeitet CSS und minifiziert es im Produktions-Build.
   eleventyConfig.addTemplateFormats("css");
   eleventyConfig.addExtension("css", {
     outputFileExtension: "css",
@@ -156,7 +154,7 @@ export default function (eleventyConfig) {
     },
   });
 
-  // JS Verarbeitung (Minifizierung nur in Production)
+  // Verarbeitet JavaScript und minifiziert es im Produktions-Build.
   eleventyConfig.addTemplateFormats("js");
   eleventyConfig.addExtension("js", {
     outputFileExtension: "js",
@@ -172,7 +170,7 @@ export default function (eleventyConfig) {
   });
 
   return {
-    // 3. NEU: Dynamisches pathPrefix für GitHub Pages (liest den Repo-Namen aus)
+    // Setzt die URL-Basis, zum Beispiel für GitHub Pages.
     pathPrefix: process.env.PATH_PREFIX || "/",
     dir: {
       input: "src",
