@@ -1,0 +1,11 @@
+{
+  "_bak": {
+    "node_modules/": true,
+    "package-lock.json": true,
+    "package.json": true,
+    "eleventy.config.js": true,
+    "dist/": true,
+    ".vscode/": true,
+    "src/projects/projects.json": true
+  }
+}

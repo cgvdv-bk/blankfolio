@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ info.title }}</title>
+    <link rel="stylesheet" href="{{ '/styles/reset.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/styles/global.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/styles/layouts/contact.css' | url }}" />
+  </head>
+  <body>
+    <!-- Importiert die Kopfzeile aus der Datei '/layouts/header.html': -->
+    {% include "components/header.html" %}
+
+    <!-- Inhalte der Kontakt Seite: -->
+    <main>
+      <div class="info-contact">
+        <!-- Inhalt aus der Datei "src/info/contact.md": -->
+        {{ content | safe }}
+      </div>
+    </main>
+
+    <!-- Importiert die Fußzeile aus der Datei '/layouts/footer.html': -->
+    {% include "components/footer.html" %}
+  </body>
+</html>

@@ -1,0 +1,30 @@
+/* ==========================================================================
+   CSS FÜR DIE PROJEKTSEITEN
+   ========================================================================== */
+
+/* Bilder: */
+.project-gallery {
+  display: grid;
+  gap: 0.25rem;
+}
+
+/* Vor-und-Zurück-Buttons + Counter */
+.pagination {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.btn-left {
+  grid-column: 1/2;
+  justify-self: left;
+}
+
+.project-counter {
+  grid-column: 2/3;
+  justify-self: center;
+}
+
+.btn-right {
+  grid-column: 3/4;
+  justify-self: right;
+}

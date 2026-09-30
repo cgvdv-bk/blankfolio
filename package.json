@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-template",
+  "author": "Bernd Krönker / Cabinet Gold van d’Vlies",
+  "license": "MIT",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "@awesome.me/buildawesome": "^0.0.1",
+    "cssnano": "^8.0.10",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.5.28",
+    "rimraf": "^6.1.3",
+    "serve": "^14.2.6",
+    "terser": "^5.51.2"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "hide": "node -e \"const fs = require('fs'); const p = '.vscode/settings.json'; let s = {}; if (fs.existsSync(p)) { try { const cnt = fs.readFileSync(p, 'utf8').trim(); if (cnt) s = JSON.parse(cnt); } catch(e) {} } s['files.exclude'] = s['files.exclude'] || s['_bak'] || { 'node_modules/': true, 'package-lock.json': true, 'package.json': true, 'eleventy.config.js': true, 'dist/': true, '.vscode/': true, 'src/projects/projects.json': true }; delete s['_bak']; if (!fs.existsSync('.vscode')) fs.mkdirSync('.vscode'); fs.writeFileSync(p, JSON.stringify(s, null, 2));\"",
+    "unhide": "node -e \"const fs = require('fs'); const p = '.vscode/settings.json'; let s = {}; if (fs.existsSync(p)) { try { const cnt = fs.readFileSync(p, 'utf8').trim(); if (cnt) s = JSON.parse(cnt); } catch(e) {} } if (s['files.exclude']) { s['_bak'] = s['files.exclude']; delete s['files.exclude']; } if (!fs.existsSync('.vscode')) fs.mkdirSync('.vscode'); fs.writeFileSync(p, JSON.stringify(s, null, 2));\"",
+    "prebuild": "npm run clean",
+    "dev": "node -e \"const fs = require('fs'); const p = '.vscode/settings.json'; if (fs.existsSync(p)) { try { const s = JSON.parse(fs.readFileSync(p, 'utf8')); if (s['files.exclude']) { s['files.exclude']['dist/'] = true; fs.writeFileSync(p, JSON.stringify(s, null, 2)); } } catch(e){} }\" && eleventy --serve",
+    "build": "node -e \"const fs = require('fs'); const p = '.vscode/settings.json'; if (fs.existsSync(p)) { try { const s = JSON.parse(fs.readFileSync(p, 'utf8')); if (s['files.exclude']) { s['files.exclude']['dist/'] = false; fs.writeFileSync(p, JSON.stringify(s, null, 2)); } } catch(e){} }\" && eleventy",
+    "preview": "node -e \"const fs = require('fs'); const p = '.vscode/settings.json'; if (fs.existsSync(p)) { try { const s = JSON.parse(fs.readFileSync(p, 'utf8')); if (s['files.exclude']) { s['files.exclude']['dist/'] = false; fs.writeFileSync(p, JSON.stringify(s, null, 2)); } } catch(e){} }\" && npm run build && serve dist"
+  },
+  "dependencies": {
+    "@11ty/eleventy-img": "^7.0.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^15.0.2"
+  }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ info.title }}</title>
+    <link rel="stylesheet" href="{{ '/styles/reset.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/styles/global.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/styles/layouts/start.css' | url }}" />
+  </head>
+  <body>
+    <!-- Importiert die Kopfzeile aus der Datei '/layouts/header.html': -->
+    {% include "components/header.html" %}
+
+    <!-- Inhalte der Startseite: -->
+    <main>
+      <div class="project-grid">
+        <!-- Die For-Schleife erstellt für jedes Projekt: -->
+        {%- for project in collections.projects -%}
+        <a class="project" href="{{ project.url }}">
+          <img src="{{ project.data.images | first }}" alt="" />
+
+          <div class="project-info">
+            <h2>{{ project.data.title }}</h2>
+            <div>{{ project.data.category }}</div>
+            <div>{{ project.data.year }}</div>
+          </div>
+        </a>
+        {%- endfor -%}
+      </div>
+    </main>
+
+    <!-- Importiert sie Fußzeile aus der Datei '/layouts/footer.html': -->
+    {% include "components/footer.html" %}
+  </body>
+</html>

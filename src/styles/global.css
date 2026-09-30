@@ -1,0 +1,67 @@
+/* ==========================================================================
+   CSS FÜR ALLE SEITEN
+   ========================================================================== */
+
+/* Webfonts importieren: */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("/public/fonts/inter.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  src: url("/public/fonts/inter-italic.woff2") format("woff2-variations");
+}
+
+/* CSS Variablen: */
+
+:root {
+  --clr-background: hsl(0, 0%, 100%);
+  --clr-text: hsl(0, 0%, 0%);
+  --clr-links: hsl(240, 100%, 50%);
+}
+
+/* Allgemein  */
+
+body {
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--clr-text);
+  background-color: var(--clr-background);
+}
+
+a {
+  color: var(--clr-links);
+}
+
+/* Kopfzeile: Allgemein */
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--clr-background);
+}
+
+/* Kopfzeile: Menu */
+
+.menu {
+  display: flex;
+  gap: 0.5rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fußzeile */
+
+footer {
+  text-align: center;
+  padding-top: 8rem;
+  padding-bottom: 0.25rem;
+}

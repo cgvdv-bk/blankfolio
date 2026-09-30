@@ -1,0 +1,16 @@
+<nav class="pagination">
+  <!-- Button zum vorherigen Projekt: -->
+  {% set prev = collections.projects | getPreviousCollectionItem(page) %}
+  <!-- Wenn es ein Projekt davor gibt, erstelle einen Link dazu: -->
+  {% if prev %}
+  <a href="{{ prev.url }}" class="btn btn-left">← {{ prev.data.title }}</a>
+  {% endif %}
+  <!-- Zeigt die Information Projekt XXX von XXX -->
+  <div class="project-counter">{{ projectIndex }} / {{ projectTotal }}</div>
+  <!-- Button zum nächsten Projekt: -->
+  {% set next = collections.projects | getNextCollectionItem(page) %}
+  <!-- Wenn es ein Projekt danach gibt, erstelle einen Link dazu: -->
+  {% if next %}
+  <a href="{{ next.url }}" class="btn btn-right">{{ next.data.title }} →</a>
+  {% endif %}
+</nav>

@@ -1,0 +1,10 @@
+/* ==========================================================================
+   CSS FÜR DIE STARTSEITE
+   ========================================================================== */
+
+/* Projektübersicht: */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+}

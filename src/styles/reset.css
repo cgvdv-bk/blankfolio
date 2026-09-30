@@ -1,0 +1,106 @@
+/* ==========================================================================
+   CSS RESET
+   ========================================================================== */
+
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  interpolate-size: allow-keywords;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  hanging-punctuation: first last;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  -moz-font-feature-settings: "kern" 1;
+  -ms-font-feature-settings: "kern" 1;
+  -o-font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+p,
+li,
+figcaption,
+blockquote,
+dl,
+dd {
+  text-wrap: pretty;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ==========================================================================
+   SPEZIFISCHE BLANKFOLIO VOREINSTELLUNGEN
+   ========================================================================== */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+header,
+main,
+footer {
+  padding-inline: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+a:has(h1),
+a:has(div) {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ info.title }} – {{ title }}</title>
+    <link rel="stylesheet" href="{{ '/styles/reset.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/styles/global.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/styles/layouts/project.css' | url }}" />
+  </head>
+  <body>
+    <!-- Importiert die Kopfzeile aus der Datei '/layouts/header.html': -->
+    {% include "components/header.html" %}
+
+    <!-- Inhalt der Projektseiten: -->
+    <main>
+      <!-- Bilder aus dem Projektordner: -->
+      <div class="project-gallery">
+        {%- for image in images -%}
+        <div class="project-gallery-image">
+          <img src="{{ image }}" alt="{{ title }}" loading="lazy" />
+        </div>
+        {%- endfor -%}
+      </div>
+
+      <!-- Inhalte aus der zugehörigen Datei "src/projects/000_example-project/info.md": -->
+      <div class="project-info">
+        <h2>{{ title }}</h2>
+        <div>{{ category }}</div>
+        <div>{{ year }}</div>
+        <div class="project-description">{{ content | safe }}</div>
+      </div>
+
+      <!-- Importiert die Vor- und Zurückpfeile aus der Datei '/layouts/pagination.html': -->
+      {% include "components/pagination.html" %}
+    </main>
+
+    <!-- Importiert die Fußzeile aus der Datei '/layouts/footer.html': -->
+    {% include "components/footer.html" %}
+  </body>
+</html>
