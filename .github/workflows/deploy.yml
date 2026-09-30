@@ -27,7 +27,7 @@ jobs:
       - name: Node.js einrichten
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: "npm"
 
       - name: Abhängigkeiten installieren
@@ -36,7 +36,6 @@ jobs:
       - name: 11ty Website bauen
         run: npm run build
         env:
-          # Übergibt automatisch den Namen des jeweiligen Studierenden-Repos als Pfad-Präfix
           PATH_PREFIX: "/${{ github.event.repository.name }}/"
 
       - name: GitHub Pages konfigurieren
