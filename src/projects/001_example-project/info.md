@@ -1,6 +1,6 @@
 ---
 title: Projekt 1
-category: Redaktionelles Design
+category: Editorial Design
 year: 2026
 ---
 

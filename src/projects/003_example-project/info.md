@@ -1,6 +1,6 @@
 ---
 title: Projekt 3
-category: Redaktionelles Design
+category: Editorial Design
 year: 2025
 ---
 
