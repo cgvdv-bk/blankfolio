@@ -9,7 +9,7 @@ Blankfolio ist eine speziell für den Coding-Grundlagenkurs entwickelte Portfoli
 
 npm wird zusammen mit Node.js installiert.
 
-## Eigenes Repository erstellen
+## Schritt 1: Eigenes Repository erstellen
 
 Erstelle auf GitHub aus dieser Vorlage ein eigenes Repository. Klicke dazu auf **Use this template** und dann auf **Create a new repository**. Klone anschließend dein neues Repository auf deinen Computer:
 
@@ -20,7 +20,7 @@ cd DEIN-REPOSITORY
 
 Ersetze `DEIN-NAME` und `DEIN-REPOSITORY` durch deinen GitHub-Benutzernamen und den Namen deines Repositorys. Wenn du das Projekt bereits geklont hast, öffne stattdessen dessen Ordner im Terminal oder in VS Code.
 
-## Website lokal starten
+## Schritt 2: Website lokal starten
 
 Installiere im Projektordner die benötigten Pakete und starte anschließend den Entwicklungsserver:
 
@@ -31,14 +31,14 @@ npm run dev
 
 Öffne danach [http://localhost:8080](http://localhost:8080) im Browser. Änderungen an den Dateien werden während der Entwicklung neu geladen. Beende den Server im Terminal mit `Ctrl+C`.
 
-## Inhalte anpassen
+## Schritt 3: Inhalte anpassen
 
 - **Seitentitel und Name:** Ändere `title` und `name` in `src/settings/info.json`.
 - **Info- und Kontaktseite:** Bearbeite `src/info/info.md` und `src/info/contact.md`.
 - **Darstellung:** Passe die CSS-Dateien in `src/styles/` an.
 - **Bilder und weitere statische Dateien:** Lege sie in `src/public/` ab.
 
-### Projekt bearbeiten oder hinzufügen
+## Schritt 4: Projekt bearbeiten oder hinzufügen
 
 Jedes Projekt liegt in einem eigenen Ordner unter `src/projects/`. Darin befinden sich eine `info.md`-Datei und die Projektbilder. In der Markdown-Datei stehen am Anfang die Angaben für Titel, Kategorie und Jahr:
 
@@ -54,7 +54,7 @@ Schreibe die Projektbeschreibung unterhalb der drei Bindestriche. Lege die Bilde
 
 Für ein neues Projekt kopiere einen vorhandenen Projektordner, gib dem neuen Ordner die nächste Nummer, zum Beispiel `004_mein-projekt`, und ersetze Text und Bilder. Die Nummern sorgen für eine übersichtliche Ordnerliste. Die Projektseiten werden automatisch erstellt.
 
-## Wichtige Ordner
+### Wichtige Ordner
 
 ```text
 src/
@@ -73,7 +73,7 @@ src/
    └── layouts/         CSS-Dateien für einzelne Seitentypen
 ```
 
-## Website bauen
+## Schritt 5: Website bauen
 
 Mit diesem Befehl erstellst du eine fertige Version der Website:
 
@@ -83,7 +83,7 @@ npm run build
 
 Die Dateien werden im Ordner `dist/` erzeugt. Ändere diesen Ordner nicht von Hand; er wird bei jedem Build neu erstellt.
 
-## Auf GitHub Pages veröffentlichen
+## Schritt 6: Auf GitHub Pages veröffentlichen
 
 1. Öffne auf GitHub die Einstellungen deines Repositorys unter **Settings → Pages**.
 2. Wähle bei **Build and deployment** als Quelle **GitHub Actions**.
