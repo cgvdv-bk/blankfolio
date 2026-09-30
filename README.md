@@ -78,6 +78,10 @@ Die Dateien werden im Ordner `dist/` erzeugt. Ändere diesen Ordner nicht von Ha
 
 Nach dem Push baut GitHub Actions die Website und veröffentlicht sie. Den Status findest du im Reiter **Actions**; nach erfolgreicher Veröffentlichung erscheint die Website-Adresse in den Pages-Einstellungen. Der Workflow passt die Pfade automatisch an den Namen deines Repositorys an.
 
+### Bei einem anderen Anbieter veröffentlichen
+
+Wenn dein Webhosting-Anbieter FTP-Zugriff ermöglicht, kannst du die Website auch dort veröffentlichen. Führe zuerst `npm run build` aus und übertrage anschließend den Inhalt des Ordners `dist/` mit einem FTP-Programm in das Webverzeichnis deines Servers.
+
 ## Wichtige Ordner
 
 ```text
