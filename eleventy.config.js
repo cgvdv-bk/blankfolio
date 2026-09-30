@@ -7,8 +7,13 @@ import htmlmin from "html-minifier-terser";
 import postcss from "postcss";
 import cssnano from "cssnano";
 import { minify as jsmin } from "terser";
+// 1. NEU: Eleventy Base Plugin importieren
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 export default function (eleventyConfig) {
+  // 2. NEU: HTML Base Plugin aktivieren (wandelt z. B. href="/projects/..." passend um)
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
   const md = markdownIt();
 
   // Umgebung prüfen: Ist es der finale Produktions-Build?
@@ -54,11 +59,9 @@ export default function (eleventyConfig) {
         console.error("Error reading images in::", filePath, err);
       }
 
-      // FIX: Wir mappen 'meta' flach in das Rückgabeobjekt,
-      // damit Eleventy Variablen wie 'title' direkt auf oberster Ebene (data.title) findet!
       return {
         ...data,
-        meta: data, // Beibehalten, falls du es in Nunjucks so abfragst
+        meta: data,
         html: md.render(content),
         images: projectImages,
       };
@@ -68,17 +71,13 @@ export default function (eleventyConfig) {
   // Zentrales URL-Rewriting basierend auf dem Frontmatter-Titel
   eleventyConfig.addGlobalData("eleventyComputed", {
     permalink: (data) => {
-      // Prüfen, ob die Datei im Projects-Ordner liegt
       if (data.page.filePathStem.startsWith("/projects/")) {
-        // 1. Fallback: Wenn ein 'title' existiert, nutzen wir diesen
         if (data.title) {
-          // FIX: Richtiger Abruf des eingebauten slugify-Filters in Eleventy
           const slugify = eleventyConfig.getFilter("slugify");
           const cleanSlug = slugify(data.title);
           return `/projects/${cleanSlug}/`;
         }
 
-        // 2. Fallback: Falls mal kein Titel da ist, nutzen wir die alte Ordner-Logik
         const pathParts = data.page.filePathStem.split("/");
         const folderName = pathParts[2];
 
@@ -88,24 +87,20 @@ export default function (eleventyConfig) {
         }
       }
 
-      // Standard-Permalink für alle anderen Seiten
       return data.permalink;
     },
 
-    // Berechnet die aktuelle Projekt-Nummer
     projectIndex: (data) => {
       if (data.collections.projects) {
         const idx = data.collections.projects.findIndex(
           (p) => p.inputPath === data.page.inputPath,
         );
         const num = idx !== -1 ? idx + 1 : 1;
-        // Wandelt die Zahl in einen String um und füllt sie links mit Nullen auf, bis sie 3 Zeichen lang ist
         return String(num).padStart(3, "0");
       }
       return "001";
     },
 
-    // NEU: Holt die Gesamtanzahl mit führenden Nullen (z.B. "011")
     projectTotal: (data) => {
       if (data.collections.projects) {
         const total = data.collections.projects.length;
@@ -181,6 +176,8 @@ export default function (eleventyConfig) {
   });
 
   return {
+    // 3. NEU: Dynamisches pathPrefix für GitHub Pages (liest den Repo-Namen aus)
+    pathPrefix: process.env.PATH_PREFIX || "/",
     dir: {
       input: "src",
       output: "dist",
